@@ -1,16 +1,18 @@
+import { useEffect } from "react";
 import { useList } from "../contexts/listContext";
 
 function Dashboard() {
-  const { toBuy } = useList();
+  const { toBuy, dispatch } = useList();
   const numberItems = toBuy.length;
   const numberItemInCart = toBuy.reduce(
     (acc, el) => (el.isInCart ? acc + 1 : acc),
     0,
   );
   const lefoverItems = numberItems - numberItemInCart;
-  // if (lefoverItems === 0) {
-  //   dispatch({ type: "list/switchToCart" });
-  // }
+  useEffect(() => {
+    if (lefoverItems === 0 && numberItems !== 0)
+      dispatch({ type: "list/switchToCart" });
+  }, [lefoverItems, numberItems, dispatch]);
 
   return (
     <>
