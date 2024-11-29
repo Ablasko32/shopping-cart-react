@@ -13,7 +13,7 @@ function MainBody() {
         <div>
           <ListDisplayOptions />{" "}
           <div className="h-3/5">
-            <div className="bg-violet-200 mt-3 p-3 rounded-xl max-w-3xl mx-auto max-h-80  overflow-y-scroll  ">
+            <div className="bg-violet-200 mt-3 p-3 rounded-xl max-w-3xl mx-auto max-h-72  overflow-y-scroll  ">
               <ListDisplay />
             </div>
           </div>
