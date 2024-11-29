@@ -5,30 +5,30 @@ const listContext = createContext();
 
 const initalState = {
   toBuy: [
-    {
-      id: 1,
-      name: "Bread",
-      quantity: 1,
-      isInCart: false,
-    },
-    {
-      id: 2,
-      name: "Carrot",
-      quantity: 2,
-      isInCart: false,
-    },
-    {
-      id: 3,
-      name: "Red",
-      quantity: 2,
-      isInCart: false,
-    },
-    {
-      id: 4,
-      name: "Blue",
-      quantity: 2,
-      isInCart: false,
-    },
+    // {
+    //   id: 1,
+    //   name: "Bread",
+    //   quantity: 1,
+    //   isInCart: false,
+    // },
+    // {
+    //   id: 2,
+    //   name: "Carrot",
+    //   quantity: 2,
+    //   isInCart: false,
+    // },
+    // {
+    //   id: 3,
+    //   name: "Red",
+    //   quantity: 2,
+    //   isInCart: false,
+    // },
+    // {
+    //   id: 4,
+    //   name: "Blue",
+    //   quantity: 2,
+    //   isInCart: false,
+    // },
   ],
   displayCart: false,
 };
