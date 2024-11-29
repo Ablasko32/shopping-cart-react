@@ -2,7 +2,7 @@ import { useList } from "../contexts/listContext";
 
 function Dashboard() {
   const { toBuy } = useList();
-  const numberItems = toBuy.reduce((acc, el) => acc + Number(el.quantity), 0);
+  const numberItems = toBuy.length;
   const numberItemInCart = toBuy.reduce(
     (acc, el) => (el.isInCart ? acc + 1 : acc),
     0,
