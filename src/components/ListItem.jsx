@@ -26,13 +26,15 @@ function ListItem({ item }) {
       className="py-1 flex space-x-4 justify-between
     "
     >
-      <div className="flex space-x-4">
+      <div className="flex space-x-4 items-center">
         {" "}
-        <input
-          className="w-4 rounded-sm "
-          onClick={handleInCart}
-          type="checkbox"
-        ></input>
+        {!item.isInCart && (
+          <input
+            className="w-4 rounded-sm "
+            onClick={handleInCart}
+            type="checkbox"
+          ></input>
+        )}
         <h3>
           <span className="text-xs">x</span>
           {item.quantity} {item.name}
