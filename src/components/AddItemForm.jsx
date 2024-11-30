@@ -5,6 +5,7 @@ function AddItemForm() {
   const [formData, setFormData] = useState({
     name: "",
     quantity: 1,
+    store: "sve",
   });
 
   function handleInput(e) {
@@ -52,9 +53,23 @@ function AddItemForm() {
           type="text"
           placeholder="Količina"
         />
+        <select
+          value={formData.store}
+          onChange={handleInput}
+          name="store"
+          className="input"
+        >
+          <option value="sve">Sve</option>
+          <option value="konzum">Konzum</option>
+          <option value="plodine">Plodine</option>
+          <option value="lidl">Lidl</option>
+          <option value="kaufland">Kaufland</option>
+          <option value="interšpar">Interšpar</option>
+        </select>
+
         <button
           type="submit"
-          className="shadow-lg bg-violet-400 px-2 py-1 rounded-full mx-5 mt-2 mb-4 absolute right-0 top-10"
+          className="shadow-lg h-24 bg-violet-400 px-2 py-1 rounded-full mx-5 mt-2 mb-4 absolute right-0 top-6"
         >
           Dodaj
         </button>

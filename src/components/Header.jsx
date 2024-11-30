@@ -1,6 +1,15 @@
+import { useList } from "../contexts/listContext";
+import Menu from "./Menu";
+
 function Header() {
+  const { displayMenu, dispatch } = useList();
+
+  function handleOpenMenu() {
+    dispatch({ type: "list/toggleMenu" });
+  }
+
   return (
-    <header className="bg-violet-300 py-4 px-3 flex items-center justify-between">
+    <header className="bg-violet-300 py-4 px-3 flex items-center justify-between relative">
       <div>
         <h1 className="font-medium tracking-widest text-xl  md:text-2xl">
           CartMan <span className="text-sm italic font-normal">V1</span>
@@ -9,13 +18,24 @@ function Header() {
       </div>
 
       <a
-        className="md:text-xl flex flex-col items-center bg-violet-400 px-2 py-1 rounded-md shadow-lg cursor-pointer"
-        target="_blank"
-        href="https://radnenedjelje.com/grad/rijeka/"
+        className="z-40 md:text-xl flex flex-col items-center bg-violet-400 px-2 py-1 rounded-md shadow-lg cursor-pointer"
+        onClick={handleOpenMenu}
       >
-        <span className="font-medium">NED</span>
-        <span>🕒</span>
+        {!displayMenu ? (
+          <>
+            <span className="font-medium">NED</span>
+            <span>🕒</span>
+          </>
+        ) : (
+          <>
+            <span className="font-medium">NED</span>
+            <span>❌</span>
+          </>
+        )}
       </a>
+
+      {/* menu */}
+      {displayMenu && <Menu />}
     </header>
   );
 }

@@ -38,6 +38,9 @@ function ListItem({ item }) {
         <h3>
           <span className="text-xs">x</span>
           {item.quantity} {item.name}
+          <span className="capitalize text-xs">
+            {item.store !== "sve" && ` |${item.store}`}
+          </span>
         </h3>
       </div>
 

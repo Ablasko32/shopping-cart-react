@@ -31,6 +31,8 @@ const initalState = {
     // },
   ],
   displayCart: false,
+  displayMenu: false,
+  currentFilter: "sve",
 };
 
 function init(initalState) {
@@ -73,6 +75,12 @@ function reducer(state, action) {
     case "list/clearAll": {
       return { toBuy: [], displayCart: false };
     }
+    case "list/toggleMenu": {
+      return { ...state, displayMenu: !state.displayMenu };
+    }
+    case "list/changeFilter": {
+      return { ...state, currentFilter: action.payload };
+    }
 
     default:
       throw new Error("Unkown action type");
@@ -86,7 +94,7 @@ ListProvider.propTypes = {
 function ListProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initalState, init);
 
-  const { displayCart, toBuy } = state;
+  const { displayCart, toBuy, displayMenu, currentFilter } = state;
 
   useEffect(() => {
     // saving state to local storage on each state change
@@ -99,6 +107,8 @@ function ListProvider({ children }) {
         toBuy,
         displayCart,
         dispatch,
+        displayMenu,
+        currentFilter,
       }}
     >
       {children}

@@ -2,8 +2,12 @@ import { useList } from "../contexts/listContext";
 import ListItem from "./ListItem";
 
 function ListDisplay() {
-  const { toBuy, displayCart, dispatch } = useList();
+  const { toBuy, displayCart, dispatch, currentFilter } = useList();
   let items = toBuy.filter((el) => !el.isInCart);
+
+  if (currentFilter !== "sve") {
+    items = items.filter((el) => el.store === currentFilter);
+  }
 
   if (displayCart) {
     items = toBuy.filter((el) => el.isInCart);
