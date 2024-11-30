@@ -7,7 +7,7 @@ function MailButton() {
       `x${el.quantity} ${el.name} ${el.store !== "sve" && `| ${el.store}`}`,
   );
 
-  const mailBody = `Popis za trgovinu!%0ADatum:${new Date().toDateString()}%0A%0A ${names.join("\n")}%0A%0APowered By CartMan`;
+  const mailBody = `Popis za trgovinu!\r\nDatum:${new Date().toDateString()}\r\r\n\n ${names.join("\r\n")}\r\r\n\nPowered By CartMan`;
   const mailSubject = "Novi popis za trgovinu";
 
   function handleMail() {
