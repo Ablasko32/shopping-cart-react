@@ -2,9 +2,12 @@ import { useList } from "../contexts/listContext";
 
 function MailButton() {
   const { toBuy } = useList();
-  const names = toBuy?.map((el) => `x${el.quantity} ${el.name} | ${el.store}`);
+  const names = toBuy?.map(
+    (el) =>
+      `x${el.quantity} ${el.name} ${el.store !== "sve" && `| ${el.store}`}`,
+  );
 
-  const mailBody = `Popis za trgovinu!\nDatum:${new Date().toDateString()}\n\n ${names.join("\n")}\n\nPowered By CartMan`;
+  const mailBody = `Popis za trgovinu!%0ADatum:${new Date().toDateString()}%0A%0A ${names.join("\n")}%0A%0APowered By CartMan`;
   const mailSubject = "Novi popis za trgovinu";
 
   function handleMail() {
