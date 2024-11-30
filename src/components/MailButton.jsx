@@ -4,10 +4,10 @@ function MailButton() {
   const { toBuy } = useList();
   const names = toBuy?.map(
     (el) =>
-      `x${el.quantity} ${el.name} ${el.store !== "sve" && `| ${el.store}`}`,
+      `x${el.quantity} ${el.name} ${el.store !== "sve" ? `| ${el.store}` : ""}`,
   );
 
-  const mailBody = `Popis za trgovinu!\r\nDatum:${new Date().toDateString()}\r\r\n\n ${names.join("\r\n")}\r\r\n\nPowered By CartMan`;
+  const mailBody = `Popis za trgovinu!\r\nDatum:${new Date().toDateString()}\r\r\n\n${names.join("\r\n")}\r\r\n\nPowered By CartMan`;
   const mailSubject = "Novi popis za trgovinu";
 
   function handleMail() {
