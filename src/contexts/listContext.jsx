@@ -119,7 +119,7 @@ function ListProvider({ children }) {
 // custom context consumer hook returns context
 function useList() {
   const context = useContext(listContext);
-  if (context === "undefinded") {
+  if (context === "undefined") {
     throw new Error("useList used outside of context provider");
   }
   return context;
