@@ -73,7 +73,7 @@ function reducer(state, action) {
       return { ...state, displayCart: false };
     }
     case "list/clearAll": {
-      return { toBuy: [], displayCart: false };
+      return { ...state, toBuy: [], displayCart: false };
     }
     case "list/toggleMenu": {
       return { ...state, displayMenu: !state.displayMenu };
