@@ -69,7 +69,7 @@ function AddItemForm() {
 
         <button
           type="submit"
-          className="shadow-lg h-24 bg-violet-400 px-2 py-1 rounded-full mx-5 mt-2 mb-4 absolute right-0 top-6"
+          className="hover:-translate-y-1 transition-all duration-100 hover:bg-violet-500 shadow-lg h-24 bg-violet-400 px-2 py-1 rounded-full mx-5 mt-2 mb-4 absolute right-0 top-6"
         >
           Dodaj
         </button>

@@ -16,7 +16,10 @@ function MailButton() {
   }
 
   return (
-    <button className="text-4xl text-violet-600  " onClick={handleMail}>
+    <button
+      className="text-4xl text-violet-600 hover:-translate-y-1 transition-all duration-100 hover:text-violet-800  "
+      onClick={handleMail}
+    >
       ✉
     </button>
   );

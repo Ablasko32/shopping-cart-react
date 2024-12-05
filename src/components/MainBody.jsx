@@ -5,7 +5,7 @@ import ListDisplayOptions from "./ListDisplayOptions";
 
 function MainBody() {
   return (
-    <main className="bg-slate-100 px-3 pt-5  ">
+    <main className="bg-slate-100 px-3 pt-5 rounded-t-[50px] pb-3  ">
       <Dashboard />
       <div className="grid md:grid-cols-2 md:gap-10 max-w-4xl  ">
         <AddItemForm />

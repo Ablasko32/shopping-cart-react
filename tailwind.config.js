@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Roboto Mono", "sans-serif"],
+        high: ["Ms Madi", "sans-serif"],
       },
     },
   },
